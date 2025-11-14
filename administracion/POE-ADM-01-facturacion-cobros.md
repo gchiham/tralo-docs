@@ -1,7 +1,7 @@
 # POE-ADM-01 — Facturación y Cobros  
 **Versión:** v1.0  
 **Área:** Administración  
-**Responsable:** Administradora  
+**Responsable:** Administrador
 **Aprobado por:** Gerente General  
 **Fecha:** 11 de Noviembre de 2025
 
@@ -14,19 +14,19 @@ Establecer el procedimiento estándar para generar facturas, registrar pagos, co
 
 ## 2. Alcance
 Este procedimiento aplica a:
-- Administradora  
+- Administrador
 - Gerente General  
 - Asesor de ventas (solo envío de información)  
 
-Aplica a todos los servicios de transporte realizados por TRALO, ya sean cargas directas o consolidadas.
+Aplica a todos los servicios de transporte realizados por TRALO.
 
 ---
 
 ## 3. Responsabilidades
 
-### **Administradora**
+### **Administrador**
 - Generar facturas en Odoo.  
-- Registrar pagos (efectivo, transferencia, cheque).  
+- Registrar pagos.  
 - Verificar que el cliente cumpla los requisitos antes de facturar.  
 - Mantener actualizado el estado de cuenta del cliente.  
 - Notificar a Ventas cuando un cliente entre en mora o llegue a su límite de crédito.  
@@ -85,10 +85,6 @@ Cuando el cliente realiza un pago:
 2. Administradora verifica en banca en línea.  
 3. Registrar pago en Odoo → “Registrar Pago → Transferencia bancaria”.
 
-#### **Efectivo**
-1. Aplicar recibo manual o digital.  
-2. Registrar pago en Odoo.  
-
 #### **Cheques**
 1. Registrar como pago “cheque”.  
 2. Marcar como “pendiente de acreditación”.
@@ -122,8 +118,7 @@ Cuando el cliente realiza un pago:
 - Solo el Gerente puede:  
   - Aprobar notas de crédito  
   - Ajustar montos  
-  - Dar ampliación de crédito  
-- Los pagos en efectivo deben cuadrar diariamente.  
+  - Dar ampliación de crédito    
 
 ---
 
