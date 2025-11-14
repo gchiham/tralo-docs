@@ -1,169 +1,43 @@
-# POE-VEN-01 — Proceso de Ventas / Ingreso de Cliente
-**Versión:** v1.0  
-**Área:** Ventas  
-**Responsable:** Asesor de Ventas  
-**Aprobado por:** Gerente General  
-**Fecha:** _(llenar)_
 
----
-
-## 1. Objetivo
-Definir el proceso estándar para:
-- Registrar nuevos clientes en TRALO  
-- Recibir solicitudes de servicio de transporte  
-- Verificar la información mínima necesaria antes de pasar el servicio a Logística  
-- Garantizar que solo se ofrezcan servicios a clientes válidos y con estado crediticio permitido
-
----
-
-## 2. Alcance
-Este procedimiento aplica a:
-- Asesor de Ventas  
-- Administradora  
-- Gerente General  
-
-Cubre todo servicio solicitado por clientes nuevos y existentes.
-
----
-
-## 3. Responsabilidades
-
-### **Asesor de Ventas**
-- Registrar clientes nuevos.  
-- Verificar requisitos de POL-CLI-01.  
-- Verificar que el cliente no esté bloqueado por crédito.  
-- Registrar la solicitud de servicio en el formato correspondiente.  
-- Confirmar precio y condiciones con el cliente.  
-- Enviar la orden de servicio completa a Logística y Administración.  
-
-### **Administradora**
-- Validar que el cliente esté creado correctamente en Odoo.  
-- Verificar estado de crédito antes de permitir despacho.  
-- Bloquear clientes en mora.  
-- Actualizar estado de pagos y límite de crédito.
-
-### **Gerente General**
-- Aprobar clientes especiales.  
-- Definir tarifas generales y condiciones especiales.  
-- Autorizar desbloqueo de clientes o ampliaciones de crédito.
-
----
-
-## 4. Documentos relacionados
-- POL-CLI-01 Requisitos de Apertura de Cliente  
-- POE-ADM-01 Facturación y Cobros  
-- POE-CRE-01 Gestión de Crédito y Aprobaciones  
-- POE-LOG-01 Despacho y Entrega  
-
----
-
-## 5. Procedimiento
-
----
-
-### **5.1 Registro de nuevo cliente**
-
-1. Asesor solicita al cliente los requisitos definidos en **POL-CLI-01**.  
-2. Verifica que la información esté completa:  
-   - Nombre o razón social  
-   - RTN / Cédula  
-   - Teléfono y correo  
-   - Dirección  
-   - Contacto principal  
-   - Forma de pago solicitada (contado o crédito)  
-3. Crea el cliente en Odoo:  
-   - Contacto  
-   - Información fiscal  
-   - Dirección de facturación  
-   - Términos de pago  
-4. Si el cliente solicita crédito → seguir POE-CRE-01.  
-5. Administradora valida que la cuenta esté bien creada.  
-
----
-
-### **5.2 Recepción de solicitud de servicio**
-
-Toda solicitud debe incluir:
-
-- Cliente  
-- Tipo de carga  
-- Punto de carga  
-- Punto de entrega  
-- Fecha y hora requerida  
-- Kilometraje o tarifa aplicada  
-- Precio acordado  
-- Contacto en origen y destino  
-
-**Regla TRALO:**  
-❗ *NO se inicia ningún servicio sin tener precio confirmado y evidencia del cliente aceptando por WhatsApp, correo o mensaje.*
-
----
-
-### **5.3 Validación antes de enviar a Logística**
-
-El Asesor debe verificar:
-
-1. Cliente activo en Odoo  
-2. Cliente NO está bloqueado por crédito  
-3. Tarifa aprobada por Gerente (si aplica)  
-4. Información del servicio completa  
-
-Luego envía la orden de servicio a:
-- Administradora  
+La orden se envía simultáneamente a:
 - Logística  
-- Gerente (si es un cliente nuevo o tarifa especial)
+- Administradora  
+- Gerente (si es cliente nuevo o caso especial)
 
 ---
 
-### **5.4 Envío de Orden de Servicio a Logística**
-
-El Asesor debe enviar la orden en formato:
-
-ORDEN DE SERVICIO – TRALO
-Cliente:
-Ruta:
-Carga:
-Fecha de servicio:
-Hora:
-Tarifa:
-Condiciones especiales:
-Contacto en punto de carga:
-Contacto en punto de entrega:
-
-
----
-
-### **5.5 Seguimiento**
-
+### **5.5 Seguimiento del servicio**
 El Asesor debe:
 
-- Confirmar cuándo el camión sale  
-- Pedir evidencia al chofer (POD / fotos)  
-- Notificar al cliente la entrega final  
+- Coordinar con el cliente horarios de carga y entrega.  
+- Dar seguimiento al chofer para actualizaciones.  
+- Solicitar POD o evidencia de entrega.  
+- Notificar al cliente cuando el servicio finalice.  
 
 ---
 
 ## 6. Prohibiciones
 
-- No cotizar sin consultar tarifas oficiales.  
-- No despachar servicios sin orden completa.  
-- No vender servicios a clientes bloqueados por crédito.  
-- No trabajar con clientes sin evidencia mínima de identidad.  
+- Vender servicios sin tarifa confirmada.  
+- Enviar órdenes incompletas o sin datos críticos.  
+- Despachar a clientes bloqueados o en mora.  
+- Prestar servicios sin evidencia de autorización del cliente.  
+- Modificar tarifas sin aprobación del Gerente.
 
 ---
 
-## 7. Flujo resumido (Mermaid)
+## 7. Flujo de proceso (Mermaid)
 
 ```mermaid
 flowchart TD
-A[Cliente solicita servicio] --> B[Asesor revisa requisitos]
-B --> C{Cliente nuevo?}
-C -->|Sí| D[Registrar cliente en Odoo]
-C -->|No| E[Validar cliente existente]
-D --> F[Consultar estado de crédito]
-E --> F[Consultar estado de crédito]
-F -->|Aprobado| G[Recibir toda la información del servicio]
-G --> H[Confirmar tarifa con cliente]
-H --> I[Enviar orden de servicio a Logística y Administración]
-I --> J[Servicio se ejecuta]
-J --> K[Enviar evidencia al cliente]
+    A[Cliente solicita servicio] --> B[Asesor solicita requisitos POL-CLI-01]
+    B --> C{Cliente nuevo?}
+    C -->|Sí| D[Registrar cliente en Odoo]
+    C -->|No| E[Validar cliente existente]
+    D --> F[Verificar estado de crédito]
+    E --> F[Verificar estado de crédito]
+    F -->|Aprobado| G[Recopilar información completa del servicio]
+    G --> H[Confirmar tarifa con cliente y obtener evidencia]
+    H --> I[Enviar orden de servicio a Logística y Administración]
+    I --> J[Servicio se ejecuta]
+    J --> K[Recibir POD y notificar al cliente]
