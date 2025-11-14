@@ -19,7 +19,7 @@ Este procedimiento aplica a:
 - Asesor de Ventas  
 - Administrador  
 
-Cubre todos los servicios donde **un mismo viaje incluye entregas múltiples**.
+Cubre todos los servicios donde un mismo viaje incluye múltiples entregas.
 
 ---
 
@@ -32,12 +32,7 @@ Cubre todos los servicios donde **un mismo viaje incluye entregas múltiples**.
 ---
 
 ## 4. Definición de Carga Consolidada
-Servicio donde **varios clientes** o **un cliente con múltiples destinos** son atendidos en **un solo viaje**, compartiendo unidad, operador y ruta base.
-
-Ejemplos:
-- 3 entregas en Tegucigalpa  
-- 4 comercios en San Pedro Sula  
-- Varios paquetes de diferentes clientes en una misma ruta  
+Servicio donde varios clientes o un cliente con múltiples destinos son atendidos en un solo viaje, compartiendo unidad, operador y ruta base.
 
 ---
 
@@ -45,61 +40,57 @@ Ejemplos:
 
 ### **Encargado de Logística**
 - Organizar rutas por zonas.  
-- Generar listado consolidado.  
+- Generar el listado consolidado.  
 - Definir orden de entregas.  
-- Coordinar con operador puntos y horarios.  
-- Confirmar entregas con cada cliente.  
+- Coordinar horarios y puntos con el operador.  
+- Confirmar entregas con clientes.  
 
 ### **Operador**
-- Completar checklist de salida.  
-- Respetar el orden de entregas.  
+- Completar checklist CHK-LOG-01.  
+- Respetar secuencia asignada.  
 - Verificar cada paquete antes de entregar.  
-- Tomar evidencia de cada entrega.  
-- Obtener POD en cada destino.  
+- Tomar evidencia por destino.  
+- Obtener POD en cada entrega.  
 
 ### **Asesor de Ventas**
-- Enviar información exacta de cada cliente/destino.  
-- Confirmar tarifas para cada entrega.  
-- Mantener comunicación con clientes.  
+- Enviar información correcta por cliente/destino.  
+- Confirmar tarifas individuales.  
+- Atender consultas del cliente final.  
 
 ### **Administrador**
-- Validar que todos los clientes estén activos.  
-- Revisar bloqueos.  
-- Enviar evidencia a facturación.
+- Validar que clientes no estén bloqueados.  
+- Recibir evidencia final para facturación.  
 
 ---
 
 ## 6. Procedimiento
 
----
-
 ### **6.1 Recepción de solicitudes**
-Ventas envía un archivo o mensaje con TODAS las entregas para el viaje:
+Ventas envía lista de entregas con:
 
 - Cliente  
-- Dirección de entrega  
+- Dirección  
 - Persona que recibe  
 - Teléfono  
 - Tipo de paquete  
-- Tarifa individual  
-- Hora recomendada  
+- Tarifa por entrega  
+- Observaciones  
 
 ---
 
 ### **6.2 Consolidación de ruta**
-Logística agrupa destinos por:
+Logística agrupa por:
 
-- Zona  
+- Zonas  
 - Proximidad  
 - Horarios  
-- Restricciones del cliente  
+- Prioridad  
 
 Luego genera el:
 
-### “Listado Consolidado – TRALO”
-
-```md
 ### Listado Consolidado – TRALO
+
+### Formato de Consolidado – TRALO
 
 - **Ruta principal:**  
 - **Unidad asignada:**  
@@ -108,18 +99,106 @@ Luego genera el:
 - **Entrega estimada final:**  
 
 ### Entregas:
-1. **Cliente:**   
-   - Dirección:  
-   - Contacto:  
-   - Teléfono:  
-   - Paquete:  
-   - Tarifa:  
-   - Observaciones:  
+1. **Cliente:**  
+   - **Dirección:**  
+   - **Contacto:**  
+   - **Teléfono:**  
+   - **Paquete:**  
+   - **Tarifa:**  
+   - **Observaciones:**  
 
 2. **Cliente:**  
-   - Dirección:  
-   - Contacto:  
-   - Teléfono:  
-   - Paquete:  
-   - Tarifa:  
-   - Observaciones:  
+   - **Dirección:**  
+   - **Contacto:**  
+   - **Teléfono:**  
+   - **Paquete:**  
+   - **Tarifa:**  
+   - **Observaciones:**  
+
+*(Se repite según cantidad de entregas)*
+
+---
+
+### **6.3 Validación del cliente**
+Administrador valida:
+
+- Cliente activo  
+- Sin bloqueo  
+- Información fiscal correcta  
+
+Si está bloqueado → NO se incluye en el consolidado.
+
+---
+
+### **6.4 Asignación de operador y unidad**
+Logística asigna operador y comunica:
+
+- Hora de salida  
+- Secuencia de entregas  
+- Listado consolidado  
+- Fotos o descripción de paquetes  
+
+---
+
+### **6.5 Checklist previo**
+Operador completa CHK-LOG-01 y envía foto a Logística.
+
+---
+
+### **6.6 Carga y reconocimiento**
+El operador debe:
+
+- Tomar foto de cada paquete  
+- Ordenar carga según secuencia  
+- Asegurar cada paquete  
+- Enviar fotos de carga final  
+
+---
+
+### **6.7 Entregas**
+En cada destino operador debe:
+
+- Confirmar nombre del receptor  
+- Tomar foto del paquete antes de entregar  
+- Obtener POD:  
+  - Nombre  
+  - Firma  
+  - Foto de evidencia  
+- Reportar entrega a Logística  
+
+---
+
+### **6.8 Cierre del consolidado**
+- Logística confirma entregas con cada cliente.  
+- Envia evidencia completa al Administrador.  
+- Administrador inicia proceso de facturación por entrega.  
+- Logística archiva evidencia digital.
+
+---
+
+## 7. Prohibiciones
+
+- Entregar paquetes a personas no autorizadas.  
+- Cambiar el orden de entregas sin aprobación.  
+- No enviar evidencia fotográfica.  
+- Transportar paquetes no registrados.  
+- Marcar entregas como realizadas sin POD.  
+- Dejar carga sin supervisión.  
+
+---
+
+## 8. Flujo del proceso (Mermaid)
+
+```mermaid
+flowchart TD
+    A[Ventas envía solicitudes] --> B[Logística consolida entregas]
+    B --> C[Administrador valida clientes]
+    C -->|Bloqueado| Z[Entrega NO autorizada]
+    C -->|Aprobado| D[Asignar unidad y operador]
+    D --> E[Operador realiza checklist]
+    E --> F[Cargar y organizar paquetes]
+    F --> G[Ejecución de entregas múltiples]
+    G --> H[Evidencia por destino]
+    H --> I[Logística confirma con clientes]
+    I --> J[Administrador envía a facturación]
+    J --> K[Cierre del consolidado]
