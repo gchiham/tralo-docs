@@ -14,7 +14,7 @@ Establecer el procedimiento estándar para evaluar clientes, asignar límites de
 
 ## 2. Alcance
 Este procedimiento aplica a:
-- Administradora  
+- Administrador
 - Gerente General  
 - Asesor de Ventas  
 
@@ -31,7 +31,7 @@ Aplica a **clientes que soliciten crédito** y **clientes activos con crédito a
 
 ## 4. Responsabilidades
 
-### **Administradora**
+### **Administrador**
 - Evaluar la solicitud de crédito.  
 - Calcular el score del cliente.  
 - Definir el límite de crédito inicial.  
@@ -54,7 +54,7 @@ Aplica a **clientes que soliciten crédito** y **clientes activos con crédito a
 ## 5. Requisitos para solicitar crédito
 Todo cliente debe presentar:
 
-- RTN o cédula  
+- RTN o DNI  
 - Dirección y contacto  
 - Historial de pago (si es cliente previo)  
 - Referencias comerciales (opcional según riesgo)  
