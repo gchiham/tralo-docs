@@ -119,3 +119,51 @@ Luego envía la orden de servicio a:
 
 El Asesor debe enviar la orden en formato:
 
+ORDEN DE SERVICIO – TRALO
+Cliente:
+Ruta:
+Carga:
+Fecha de servicio:
+Hora:
+Tarifa:
+Condiciones especiales:
+Contacto en punto de carga:
+Contacto en punto de entrega:
+
+
+---
+
+### **5.5 Seguimiento**
+
+El Asesor debe:
+
+- Confirmar cuándo el camión sale  
+- Pedir evidencia al chofer (POD / fotos)  
+- Notificar al cliente la entrega final  
+
+---
+
+## 6. Prohibiciones
+
+- No cotizar sin consultar tarifas oficiales.  
+- No despachar servicios sin orden completa.  
+- No vender servicios a clientes bloqueados por crédito.  
+- No trabajar con clientes sin evidencia mínima de identidad.  
+
+---
+
+## 7. Flujo resumido (Mermaid)
+
+```mermaid
+flowchart TD
+A[Cliente solicita servicio] --> B[Asesor revisa requisitos]
+B --> C{Cliente nuevo?}
+C -->|Sí| D[Registrar cliente en Odoo]
+C -->|No| E[Validar cliente existente]
+D --> F[Consultar estado de crédito]
+E --> F[Consultar estado de crédito]
+F -->|Aprobado| G[Recibir toda la información del servicio]
+G --> H[Confirmar tarifa con cliente]
+H --> I[Enviar orden de servicio a Logística y Administración]
+I --> J[Servicio se ejecuta]
+J --> K[Enviar evidencia al cliente]
