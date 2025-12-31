@@ -1,3 +1,4 @@
+```mermaid
 graph TD
     %% Inicio del Proceso
     A((Idea Política)) -->|Entrada Libre| B(IntakeHN_GCHI)
@@ -34,3 +35,4 @@ graph TD
     style F fill:#ffebee,stroke:#b71c1c
     style L fill:#e8f5e9,stroke:#1b5e20
     style J fill:#fff3e0,stroke:#e65100
+```
